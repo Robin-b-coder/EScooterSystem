@@ -10,24 +10,16 @@ void main() {
     ));
 
     ScooterStation scooterStation = new ScooterStation(scooters);
-    System.out.println("Trying to rent scooter. Battery is 60%.");
     scooterStation.rentScooter(60);
-    System.out.println("Trying to rent scooter. Battery is 90%.");
     scooterStation.rentScooter(90);
-    System.out.println("Trying to rent scooter. Battery is 70%.");
     scooterStation.rentScooter(70);
-    System.out.println("Trying to rent scooter. Battery is 20%.");
     scooterStation.rentScooter(20);
 
-    System.out.println("==========================================================================");
-    System.out.println("Trying to return scooter with id 1. remaining Battery is 20%.");
     scooterStation.returnScooter(1, 20);
 
 
-    System.out.println("Trying to rent scooter with id 0. required Battery is 20%.");
     scooterStation.rentScooter(20);
 
-    System.out.println("================================================================================");
     scooterStation.printStats();
 
 }

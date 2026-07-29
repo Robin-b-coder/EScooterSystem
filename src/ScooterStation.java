@@ -27,13 +27,11 @@ public class ScooterStation {
         for (Scooter scooter : scooters) {
             if (scooter.getBattery() >= requiredBattery) {
                 scooter.setRented(true);
-                System.out.println("Scooter mit der ID " + scooter.getId() + " wurde erfolgreich vermietet.");
                 succeededRents++;
                 return scooter.getId();
             }
         }
         System.out.print("Es gibt keinen Scooter mit ausreichendem Akku");
-        System.out.println(" oder alle passenden Scooter sind bereits verliehen. " + -1);
         failedRents++;
         return -1;
     }
@@ -44,16 +42,13 @@ public class ScooterStation {
                 scooter.setRented(false);
                 scooter.setBattery(remainingBattery);
                 System.out.print("Scooter mit folgender ID zurückgegeben: " + scooter.getId());
-                System.out.println(" und so viel Akku ist noch da: " + scooter.getBattery());
                 return;
             }
         }
-        System.out.println("Scooter mit folgender ID " + id + " nicht gefunden.");
 
     }
 
     public void printStats() {
-        System.out.println("Succeeded Rents: " + succeededRents);
         System.out.println("Failed Rents: " + failedRents);
     }
 
@@ -80,6 +75,16 @@ public class ScooterStation {
             }
         }
         return null;
+    }
+
+    @SuppressWarnings("unused")
+    public int getSucceededRents() {
+        return succeededRents;
+    }
+
+    @SuppressWarnings("unused")
+    public void setSucceededRents(int succeededRents) {
+        this.succeededRents = succeededRents;
     }
 }
 // Erweitere das System so, dass man am Ende abfragen kann:
